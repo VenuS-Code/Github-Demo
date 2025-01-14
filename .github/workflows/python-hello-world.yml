@@ -26,4 +26,4 @@ jobs:
 
       # Run the Python script
       - name: Run Hello World script
-        run: python hello.py
+        run: python hello-world.py
