@@ -5,7 +5,9 @@ jobs:
   hello-world:
    runs-on: ${{ matrix.os }}
    strategy:
-    matrix:
+     
+     fail-fast: true  # Stop all matrix jobs if any job fails
+     matrix:
       os: [ubuntu-latest]
       python-version: [3.8, 3.9, 3.12, 3.11]
       
