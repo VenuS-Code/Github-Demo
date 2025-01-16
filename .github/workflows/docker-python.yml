@@ -1,0 +1,25 @@
+name: Containerized Job Example
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  containerized-job:
+    runs-on: ubuntu-latest
+    container:
+      image: python:3.11-slim  # Replace with your desired Docker image
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          pip install --no-cache-dir -r requirements.txt
+
+      - name: Run tests
+        run: |
+          pytest tests/
+          python3 hello-world.py
